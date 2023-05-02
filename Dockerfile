@@ -1,6 +1,6 @@
 FROM node:18
 
-WORKDIR /home/pptruser
+WORKDIR /home/be
 
 COPY package*.json ./
 
@@ -15,4 +15,4 @@ ARG API_KEY
 ENV API_KEY=${API_KEY}
 
 # Run app
-CMD ["CMD", "yarn start"]
+CMD ["yarn", "start"]
