@@ -15,6 +15,7 @@ app.use(express.json());
 app.post("/prompt", async (req, res) => {
   try {
     const response = await getAIResponse(req.body.text);
+    res.header("Access-Control-Allow-Origin", "*");
     res.set("Content-Type", "application/json");
     res.send(JSON.stringify({ text: response }));
   } catch (e) {
